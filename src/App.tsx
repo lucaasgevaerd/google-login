@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import { createContext, useState } from 'react';
 import './App.css';
+import AppRouter from './AppRouter';
+import { profile } from './types/profile';
+
+export const ProfileContext = createContext({
+  state: {
+    email: '',
+    familyName: '',
+    givenName: '',
+    googleId: '',
+    imageUrl: '',
+    name: '',
+  }, setState: (state: profile) => { }
+})
 
 function App() {
+
+  const [state, setState] = useState<profile>({
+    email: '',
+    familyName: '',
+    givenName: '',
+    googleId: '',
+    imageUrl: '',
+    name: '',
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProfileContext.Provider value={{ state, setState }}>
+      <div className="app-container">
+        <AppRouter />
+      </div>
+    </ProfileContext.Provider>
   );
 }
 

@@ -1,0 +1,62 @@
+.login-card-container {
+  width: 100%;
+  max-width: 350px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(221, 221, 249, 0.075);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-card-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card-inputs {
+  height: 40px;
+  border: none;
+  background-color: unset;
+  border-bottom: 1px solid #fff;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 0 2px 1px #000;
+  line-height: 2.5;
+}
+
+.login-card-inputs:-webkit-autofill,
+.login-card-inputs:-webkit-autofill:hover,
+.login-card-inputs:-webkit-autofill:focus,
+.login-card-inputs:-webkit-autofill:active {
+  transition: background-color 36000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.login-card-inputs:focus {
+  outline: none;
+}
+
+.login-card-inputs:first-of-type {
+  margin-bottom: 20px;
+}
+
+.login-card-inputs::placeholder {
+  color: #bbb;
+  text-shadow: none;
+}
+
+.login-card-button {
+  height: 40px;
+  margin-bottom: 20px;
+  border: 1px solid #fff;
+  background-color: unset;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 40px;
+  text-shadow: 0 2px 1px #000;
+}
