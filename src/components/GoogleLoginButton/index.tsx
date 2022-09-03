@@ -14,13 +14,13 @@ function GoogleLoginButton() {
   const navigate = useNavigate();
 
   const onSucess = (res: any) => {
-    console.log("LOGIN SUCCESS! Current user: ", res.profileObj);
+    console.log("LOGIN SUCCESS! Current user: ", res);
     navigate('/home');
+    setState(res.profileObj);
     /* const accessToken = gapi.auth.getToken().access_token;
     console.log(accessToken); */
     /* const accessTokenId = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse();
     console.log(accessTokenId) */
-    setState(res.profileObj);
   };
 
   const onFailure = (res: any) => {

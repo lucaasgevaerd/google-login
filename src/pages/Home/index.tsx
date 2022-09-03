@@ -25,31 +25,33 @@ function Home() {
     <>
       <div className="home-card-container">
         <h2>Logged in with google account</h2>
-        <table>
-          <tr>
-            <td>Imagem do perfil:</td>
-            <td><img src={profile.imageUrl} alt={'Avatar de ' + profile.name} referrerPolicy='no-referrer' /></td>
-          </tr>
-          <tr>
-            <td>Email:</td>
-            <td>{profile.email}</td>
-          </tr>
-          <tr>
-            <td>Sobrenome:</td>
-            <td>{profile.familyName}</td>
-          </tr>
-          <tr>
-            <td>Given name:</td>
-            <td>{profile.givenName}</td>
-          </tr>
-          <tr>
-            <td>Id do Google:</td>
-            <td>{profile.googleId}</td>
-          </tr>
-          <tr>
-            <td>Nome:</td>
-            <td>{profile.name}</td>
-          </tr>
+        <table className='home-card-table'>
+          <tbody>
+            <tr>
+              <td>Imagem do perfil:</td>
+              <td><img src={profile.imageUrl} alt={'Avatar de ' + profile.name} referrerPolicy='no-referrer' /></td>
+            </tr>
+            <tr>
+              <td>Primeiro nome:</td>
+              <td>{profile.givenName}</td>
+            </tr>
+            <tr>
+              <td>Sobrenome:</td>
+              <td>{profile.familyName}</td>
+            </tr>
+            <tr>
+              <td>Nome completo:</td>
+              <td>{profile.name}</td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+              <td>{profile.email}</td>
+            </tr>
+            <tr>
+              <td>Id do Google:</td>
+              <td>{profile.googleId}</td>
+            </tr>
+          </tbody>
         </table>
         <GoogleLogoutButton />
       </div>

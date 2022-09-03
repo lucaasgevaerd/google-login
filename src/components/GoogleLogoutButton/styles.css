@@ -9,6 +9,8 @@
   border-radius: 6px;
   background-color: unset;
   text-shadow: 0 2px 1px #000;
+  width: 100%;
+  max-width: 320px;
 }
 
 .google-login-button-container:hover {
