@@ -39,14 +39,12 @@ function Home() {
         )}
         <table className='home-card-table'>
           <tbody>
-            <tr>
-              <td>Imagem do perfil:</td>
-              {(profile.imageUrl === '') ? (
-                <td className="empty">Sem avatar</td>
-              ) : (
+            {(profile.imageUrl !== '') && (
+              <tr>
+                <td>Imagem do perfil:</td>
                 <td className="image-container"><img src={profile.imageUrl} alt={'Avatar de ' + profile.name} referrerPolicy='no-referrer' /></td>
-              )}
-            </tr>
+              </tr>
+            )}
             <tr>
               <td>Primeiro nome:</td>
               <td>{profile.givenName}</td>
@@ -63,14 +61,12 @@ function Home() {
               <td>Email:</td>
               <td>{profile.email}</td>
             </tr>
-            <tr>
-              <td>Id do Google:</td>
-              {(profile.googleId === '') ? (
-                <td className="empty">Sem id do Google</td>
-              ) : (
+            {(profile.googleId !== '') && (
+              <tr>
+                <td>Id do Google:</td>
                 <td>{profile.googleId}</td>
-              )}
-            </tr>
+              </tr>
+            )}
           </tbody>
         </table>
         {(profile.imageUrl === '' && profile.googleId === '') ? (

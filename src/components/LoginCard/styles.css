@@ -1,6 +1,6 @@
 .login-card-container {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   height: 550px;
   display: flex;
   justify-content: center;
@@ -22,6 +22,7 @@
 .login-card-form {
   display: flex;
   flex-direction: column;
+  max-width: 400px;
 }
 
 .login-card-inputs {

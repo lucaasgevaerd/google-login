@@ -17,11 +17,11 @@ function GoogleLogoutButton() {
   return (
     <GoogleLogout
       render={renderProps => (
-        <button type="submit" className="google-login-button-container" onClick={renderProps.onClick} disabled={renderProps.disabled}>
-          <div className="google-login-button-img">
+        <button type="submit" className="google-logout-button-container" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+          <div className="google-logout-button-img">
             <img src="/google-icon.svg" width="22" height="22" alt="google-icon" />
           </div>
-          <div className="google-login-button-description">
+          <div className="google-logout-button-description">
             <p>Sair</p>
           </div>
         </button>

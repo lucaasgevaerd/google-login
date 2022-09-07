@@ -9,6 +9,8 @@
   border-radius: 6px;
   background-color: unset;
   transition: background-color 0.3s;
+  width: 100%;
+  max-width: 370px;
 }
 
 .google-login-button-container:hover {
