@@ -1,7 +1,8 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import './App.css';
 import AppRouter from './AppRouter';
-import { profile } from './types/profile';
+import { Authentication } from './types/authentication';
+import { Profile } from './types/profile';
 
 export const ProfileContext = createContext({
   state: {
@@ -11,12 +12,18 @@ export const ProfileContext = createContext({
     googleId: '',
     imageUrl: '',
     name: '',
-  }, setState: (state: profile) => { }
+  }, setState: (state: Profile) => { },
+})
+
+export const AuthenticationContext = createContext({
+  isAuthenticated: {
+    value: false
+  }, setIsAuthenticated: (isAuthenticated: Authentication) => { }
 })
 
 function App() {
 
-  const [state, setState] = useState<profile>({
+  const [state, setState] = useState<Profile>({
     email: '',
     familyName: '',
     givenName: '',
@@ -25,12 +32,29 @@ function App() {
     name: '',
   })
 
+  const [isAuthenticated, setIsAuthenticated] = useState<Authentication>(
+    {
+      value: JSON.parse(localStorage.getItem('isAuthenticated')!)?.value || false
+    }
+  );
+
+  useEffect(() => {
+    localStorage.setItem('isAuthenticated', JSON.stringify(isAuthenticated)!)
+  })
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('isAuthenticated')!);
+    setIsAuthenticated({ value: data.value })
+  }, []);
+
   return (
-    <ProfileContext.Provider value={{ state, setState }}>
-      <div className="app-container">
-        <AppRouter />
-      </div>
-    </ProfileContext.Provider>
+    <AuthenticationContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+      <ProfileContext.Provider value={{ state, setState }}>
+        <div className="app-container">
+          <AppRouter />
+        </div>
+      </ProfileContext.Provider>
+    </AuthenticationContext.Provider>
   );
 }
 

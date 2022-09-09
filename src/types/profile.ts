@@ -1,4 +1,4 @@
-export type profile = {
+export type Profile = {
   email: string;
   familyName: string;
   givenName: string;

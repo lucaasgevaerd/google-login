@@ -1,0 +1,132 @@
+.forgot-password-card-title {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 90px;
+  font-size: 30px;
+}
+
+.forgot-password-card-description {
+  width: 100%;
+  max-width: 370px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.forgot-password-card-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 370px;
+}
+
+.forgot-password-card-input {
+  height: 40px;
+  border: none;
+  background-color: unset;
+  border-bottom: 1px solid #fff;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 2.5;
+}
+
+.forgot-password-card-input:-webkit-autofill,
+.forgot-password-card-input:-webkit-autofill:hover,
+.forgot-password-card-input:-webkit-autofill:focus,
+.forgot-password-card-input:-webkit-autofill:active {
+  transition: background-color 36000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.forgot-password-card-input:focus {
+  outline: none;
+  border-bottom: 2px solid #fff;
+}
+
+.forgot-password-card-input::placeholder {
+  color: #bbb;
+}
+
+.forgot-password-card-link {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  width: 100%;
+  max-width: 370px;
+  justify-content: flex-end;
+  color: #aaa;
+}
+
+.forgot-password-card-link a {
+  text-decoration: none;
+  color: unset;
+}
+
+.error {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  background-color: rgb(255, 80, 80);
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 0 0 6px 6px;
+  width: 160px;
+  text-align: center;
+}
+
+.modal-container {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s;
+  padding: 10px;
+  min-height: 100vh;
+}
+
+.modal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 500px;
+  height: 270px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.modal-description {
+  font-size: 20px;
+  text-align: justify;
+  text-align-last: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.modal-email {
+  font-size: 20px;
+  color: #fff;
+  filter: drop-shadow(0 2px 1px #000);
+}
+
+.modal-back-to-login {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+.blur-background {
+  filter: blur(30px);
+}
